@@ -1,0 +1,4 @@
+.vscode
+success_model_archieve/*
+__pycache__
+.gitignore

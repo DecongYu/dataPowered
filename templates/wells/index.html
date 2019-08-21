@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block header %}
+  <h1>{% block title %}Wells{% endblock %}</h1>
+  {% if g.user %}
+    <a type="button" class="action btn btn-info" href="{{ url_for('wells.create') }}">Enter a new well?</a>
+  {% endif %}
+{% endblock %}
+
+{% block content %}
+{% for well in wells %}
+    {% if g.user['id'] == well['author_id'] %}
+    <article class="post">
+      <header>
+        <div>
+          <h1>{{ well['well_id'] }}</h1>
+          <div class="about">entered on {{ well['entered'].strftime('%Y-%m-%d') }}</div>
+        </div>
+            <a type="button" class="action btn btn-default" href="{{ url_for('wells.update', id=well['id']) }}">Edit</a> &nbsp&nbsp&nbsp&nbsp
+            <a type="button" class="action btn btn-default" href="{{ url_for('wells.run_model', id=well['id']) }}">Run Production Modeling</a>
+      </header>
+      <div class="body">On-production date:&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp{{ well['on_prd_date'] }}</div>
+      <div class="body">Well TVD (m):&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp{{ well['tvd'] }}</div>
+      <div class="body">Total lateral length (m):&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp{{ well['latrl_len'] }}</div>
+      <div class="body">Total frac'ed length(m):&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp{{ well['frac_len'] }}</div>
+      <div class="body">Total frac proppant tonnage(tonne):&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp{{ well['cum_frac_propp'] }}</div>
+      <div class="body">Well bottom hole longitude:&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp{{ well['bh_long'] }}</div>
+      <div class="body">Well bottom hole latitude:&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp{{ well['bh_lat'] }}</div>
+    </article>
+      {% if not loop.last %}
+      <hr>
+      {% endif %}
+
+    {% endif %}
+    {% endfor %}
+{% endblock %}

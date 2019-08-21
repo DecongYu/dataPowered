@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block header %}
+  <h1>{% block title %}Edit "{{ well['well_id'] }}"{% endblock %}</h1>
+{% endblock %}
+
+{% block content %}
+  <form method="post">
+    <label for="well_id">Well Name</label>
+    <input name="well_id" id="well_id"
+      value="{{ request.form['well_id'] or well['well_id'] }}" required>
+    <fieldset>
+    <legend>Well Parameter Update</legend>
+    <label for='on_prd_date'>On-production date (2013-05-01 onward):</label>
+    <input type="date" name="on_prd_date" id="on_prd_date" value="{{ request.form['on_prd_date'] or well['on_prd_date'] }}" required><br>
+    <label for='tvd'>Well TVD (1300-3000m):</label>
+    <input type="number" max="3000" min="1300" step="0.001" name="tvd" id="tvd" value="{{ request.form['tvd'] or well['tvd'] }}" required><br>
+    <label for='latrl_len'>Total lateral length (m):</label>
+    <input type="number" step="0.001" name="latrl_len" id="latrl_len" value="{{ request.form['latrl_len'] or well['latrl_len'] }}" required><br>
+    <label for='frac_len'>Total frac'ed length(500-3200m):</label>
+    <input type="number" max="3200", min="500" step="0.001" name="frac_len" id="frac_len" value="{{ request.form['frac_len'] or well['frac_len'] }}" required><br>
+    <label for='cum_frac_propp'>Total frac proppant tonnage(tonne):</label>
+    <input type="number" step="0.001" name="cum_frac_propp" id="cum_frac_propp" value="{{ request.form['cum_frac_propp'] or well['cum_frac_propp'] }}" required><br>
+    <label for='bh_long'>Well bottom hole longitude (-122.953 to -120.003):</label>
+    <input type="number" max="-120.003" min="-122.953" step="0.000001" name="bh_long" id="bh_long" value="{{ request.form['bh_long'] or well['bh_long'] }}" required><br>
+    <label for='bh_lat'>Well bottom hole latitude (55.527-57.639):</label>
+    <input type="number" max="57.639" min="55.527" step="0.000001" name="bh_lat" id="bh_lat" value="{{ request.form['bh_lat'] or well['bh_lat'] }}" required>
+   </fieldset>
+    <input type="submit" value="Save">
+  </form>
+  <hr>
+  <form action="{{ url_for('wells.delete', id=well['id']) }}" method="post">
+    <input class="danger" type="submit" value="Delete" onclick="return confirm('Are you sure?');">
+  </form>
+{% endblock %}

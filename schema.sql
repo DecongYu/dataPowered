@@ -1,3 +1,4 @@
+-- creating database at the app installation;
 DROP TABLE IF EXISTS user;
 DROP TABLE IF EXISTS well;
 

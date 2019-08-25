@@ -10,6 +10,7 @@
 
 # structure:
 ── shaleoptim/
+"
 │   ├── __init__.py
 │   ├── db.py             (data request)
 │   ├── schema.sql        (database initiation)
@@ -28,4 +29,4 @@
 │       └── style.css
 └── instance/     
     └── shale.sqlite  (database)     
-       
+"       

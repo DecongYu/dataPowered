@@ -1,6 +1,6 @@
 
 # Shale Well Completion Optimization
--- a free web app (witout data model)
+-- a free web app
 
 # function:
   1. user management

@@ -1,6 +1,6 @@
 
 # Shale Well Completion Optimization
--- a free web app
+-- a free web app for shale oil and gas drilling and well completion optimization for max production/profit margin
 
 # functions:
   1. user management

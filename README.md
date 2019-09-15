@@ -2,7 +2,7 @@
 # Shale Well Completion Optimization
 -- a free web app
 
-# function:
+# functions:
   1. user management
   2. well data management
   3. well completion parameters vs. production prediction modeling

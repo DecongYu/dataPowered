@@ -24,7 +24,7 @@
 │   │   ├── auth/
 │   │   │   ├── login.html
 │   │   │   └── register.html
-│   │   └── welss/
+│   │   └── wells/
 │   │       ├── create.html
 │   │       ├── index.html
 │   │       └── update.html

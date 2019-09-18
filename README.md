@@ -17,6 +17,8 @@
 │   ├── schema.sql        (database initiation)
 │   ├── auth.py
 │   ├── wells.py          (well data management and modeling)
+│   ├── success_model_archive/
+│   │   └── final_rf_model1.sav ... final_rf_model5.sav
 │   ├── templates/
 │   │   ├── base.html
 │   │   ├── auth/

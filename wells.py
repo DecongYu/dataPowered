@@ -136,7 +136,7 @@ def run_model(id):
 
     # run modeling on 5 models
     for i in [1,2,3,4,5]:
-        loaded_model = pickle.load(open("./shaleoptim/success_model_archieve/final_RF_model%d.sav" %(i), 'rb'))
+        loaded_model = pickle.load(open("./shaleoptim/success_model_archive/final_RF_model%d.sav" %(i), 'rb'))
         predict = loaded_model.predict(model_inputs)
         predict = list(predict)
         predict = [round(elem, 1) for elem in predict]

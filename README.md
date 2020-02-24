@@ -1,6 +1,7 @@
 
 # Shale Well Completion Optimization
--- a free web app for shale oil and gas drilling and well completion optimization for max production/profit margin
+-- a simplified local deployed app for shale oil and gas drilling and well completion optimization for max production/profit margin
+See DecongYu.com for a complete shale optimization app and other GIS tools. 
 
 # functions:
   1. user management
